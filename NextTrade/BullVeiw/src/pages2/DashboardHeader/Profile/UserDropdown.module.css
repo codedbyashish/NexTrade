@@ -1,0 +1,161 @@
+.wrapper {
+  position: relative;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 8px 12px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip:hover {
+  border-color: var(--brand-green);
+}
+
+.avatar,
+.dropAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--brand-green);
+  color: white;
+
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  font-size: 13px;
+}
+
+.dropAvatar {
+  width: 44px;
+  height: 44px;
+  font-size: 16px;
+}
+
+.name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.chevron {
+  color: var(--text-secondary);
+  transition: transform 0.2s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+
+  width: 280px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+
+  overflow: hidden;
+  z-index: 999;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+  animation: fadeIn 0.2s ease;
+}
+
+.dropHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 16px;
+}
+
+.dropName {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.dropRole {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border-color);
+}
+
+.item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 16px;
+
+  border: none;
+  background: transparent;
+
+  color: var(--text-primary);
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.item:hover {
+  background: var(--bg-secondary);
+}
+
+.itemDanger {
+  color: #ef4444;
+}
+
+.itemDanger:hover {
+  background: rgba(239, 68, 68, 0.08);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .name {
+    display: none;
+  }
+
+  .dropdown {
+    width: 250px;
+    right: -10px;
+  }
+}

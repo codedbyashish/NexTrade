@@ -1,0 +1,69 @@
+.tableWrapper {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--muted-text);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.table td {
+  padding: 14px 18px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.symbol {
+  font-weight: 700;
+}
+
+/* 🔧 Fix: .table td se specificity zyada chahiye, isliye combine kiya */
+.table td.profitText,
+.table td.lossText {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.table td.profitText {
+  color: var(--brand-green);
+}
+
+.table td.lossText {
+  color: #d92d2d;
+}
+
+.emptyRow {
+  text-align: center;
+  padding: 24px;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted-text);
+}
+.table tr.row:hover td {
+  background: var(--bg-secondary);
+}

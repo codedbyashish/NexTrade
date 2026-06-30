@@ -1,0 +1,50 @@
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-0);
+}
+
+.card:nth-child(1) {
+  border-left: 3px solid #22c55e;
+}
+
+.card:nth-child(2) {
+  border-left: 3px solid #f97316;
+}
+
+.card:nth-child(3) {
+  border-left: 3px solid #3b82f6;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+.value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}

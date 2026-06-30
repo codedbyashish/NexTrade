@@ -1,0 +1,77 @@
+.page {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 20px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+  align-items: start;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0; /* prevents chart overflow on grid */
+}
+
+.chartCard {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.statsCard {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.rightCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.tradeSticky {
+  position: sticky;
+  top: 20px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .tradeSticky {
+    position: static;
+  }
+
+  .rightCol {
+    order: 3;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .page {
+    padding: 14px 12px 28px;
+    gap: 14px;
+  }
+
+  .chartCard,
+  .statsCard {
+    padding: 12px;
+    border-radius: 10px;
+  }
+}

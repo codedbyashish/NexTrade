@@ -1,0 +1,60 @@
+.wrapper {
+  position: relative;
+  max-width: 400px;
+}
+
+.form {
+  display: flex;
+  gap: 8px;
+}
+
+.input {
+  flex: 1;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.searchBtn {
+  background: var(--brand-green);
+  color: var(--btn-text-on-green);
+  border: none;
+  border-radius: 10px;
+  padding: 0 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.searchBtn:hover {
+  background: var(--brand-green-hover);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.option {
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.option:hover {
+  background: var(--bg-secondary);
+}

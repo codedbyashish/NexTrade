@@ -1,0 +1,73 @@
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 16px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.chartContainer {
+  flex: 1;
+  min-width: 140px;
+}
+
+.list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.symbolBadge {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.percentage {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted-text);
+}
+
+.emptyText {
+  font-size: 0.85rem;
+  color: var(--muted-text);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .content {
+    flex-direction: column;
+  }
+}

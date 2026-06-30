@@ -1,0 +1,56 @@
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 16px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.txText {
+  color: var(--text-primary);
+}
+
+.buyTag {
+  color: var(--brand-green);
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+.sellTag {
+  color: #d92d2d;
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+
+.date {
+  color: var(--muted-text);
+  font-size: 0.78rem;
+}
+
+.emptyText {
+  font-size: 0.85rem;
+  color: var(--muted-text);
+  margin: 0;
+}

@@ -1,0 +1,99 @@
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.headerIcon {
+  color: #eab308;
+}
+
+.heading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alertItem {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 10px 12px;
+  border-left: 3px solid transparent;
+}
+
+.borderProfit {
+  border-left-color: var(--brand-green);
+}
+
+.borderAnomaly {
+  border-left-color: #3b82f6;
+}
+
+.alertTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+.alertTitle {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.alertTime {
+  font-size: 0.7rem;
+  color: var(--muted-text);
+}
+
+.alertDesc {
+  font-size: 0.78rem;
+  color: var(--muted-text);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 22px 8px 8px;
+  gap: 4px;
+}
+
+.emptyIcon {
+  color: var(--brand-green);
+  margin-bottom: 6px;
+}
+
+.emptyTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.emptyDesc {
+  font-size: 0.78rem;
+  color: var(--muted-text);
+  margin: 0;
+  line-height: 1.4;
+  max-width: 220px;
+}

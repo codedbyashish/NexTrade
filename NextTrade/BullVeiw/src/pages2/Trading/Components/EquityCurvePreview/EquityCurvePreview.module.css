@@ -1,0 +1,124 @@
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.18s ease, transform 0.15s ease;
+  outline: none;
+  user-select: none;
+}
+
+.card:hover {
+  border-color: var(--brand-green);
+  transform: translateY(-1px);
+}
+
+.card:active {
+  transform: translateY(0px);
+}
+
+.card:focus-visible {
+  box-shadow: 0 0 0 2px var(--brand-green);
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--badge-new-text);
+  background: var(--badge-new-bg);
+  padding: 3px 8px;
+  border-radius: 20px;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--badge-new-text);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--icon-bg);
+  border: 1px solid var(--card-border);
+}
+
+.growIcon {
+  width: 22px;
+  height: 22px;
+  color: var(--brand-green);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted-text);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.url {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-family: monospace;
+}
+
+.navBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--brand-green);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--brand-green);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.card:hover .navBtn {
+  background: var(--brand-green);
+  color: var(--btn-text-on-green);
+}

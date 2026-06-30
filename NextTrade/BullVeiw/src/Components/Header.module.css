@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*{
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 80px;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar .brand .link {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brand-green);
+  text-decoration: none;
+  letter-spacing: -0.3px;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin-left: 32px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.navbar .button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.navbar .button button {
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+}
+
+.navbar .button button:first-child {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  padding: 8px 16px;
+}
+
+.navbar .button button:first-child:hover {
+  background-color: var(--bg-secondary);
+}
+
+.navbar .button button:last-child {
+  background-color: var(--brand-green);
+  border: none;
+  color: var(--btn-text-on-green);
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.navbar .button button:last-child:hover {
+  background-color: var(--brand-green-hover);
+}

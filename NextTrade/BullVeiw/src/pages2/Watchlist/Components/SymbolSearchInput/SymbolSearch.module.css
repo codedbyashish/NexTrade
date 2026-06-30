@@ -1,0 +1,77 @@
+.wrapper {
+  position: relative;
+}
+
+.form {
+  display: flex;
+  gap: 8px;
+}
+
+.input {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+  width: 220px;
+  transition: border-color 0.15s;
+}
+
+.input:focus {
+  border-color: var(--border-accent);
+}
+
+.searchBtn {
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.searchBtn:hover {
+  background: #15803d;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 100;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  min-width: 280px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  border-top: 1px solid var(--border);
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.1s;
+  font-size: 13px;
+}
+
+.option:first-child {
+  border-top: none;
+}
+
+.option:hover {
+  background: var(--surface-0);
+}

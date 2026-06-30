@@ -1,0 +1,25 @@
+.trustsection {
+  background: var(--bg-secondary);
+  padding: 60px 20px;
+  text-align: center;
+  min-height: 30vh;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.trustlabel {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.trustheading {
+  font-size: clamp(26px, 5vw, 46px);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}

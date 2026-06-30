@@ -1,0 +1,146 @@
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.headerIcon {
+  color: var(--brand-green);
+}
+
+.heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.badge {
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--brand-green);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--muted-text);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.table td {
+  padding: 12px;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.row {
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.row:hover td {
+  background: var(--bg-secondary);
+}
+
+.row:last-child td {
+  border-bottom: none;
+}
+
+.instrumentCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.symName {
+  font-weight: 700;
+}
+
+.exchange {
+  font-size: 0.72rem;
+  color: var(--muted-text);
+}
+
+.profit,
+.loss {
+  font-weight: 600;
+}
+
+.profit {
+  color: var(--brand-green);
+}
+
+.loss {
+  color: #d92d2d;
+}
+
+.pnlPercent {
+  font-size: 0.72rem;
+  opacity: 0.85;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: #d92d2d;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.closeBtn:hover {
+  background: rgba(217, 45, 45, 0.12);
+}
+
+@media (max-width: 640px) {
+  .table th,
+  .table td {
+    padding: 8px;
+    font-size: 0.78rem;
+  }
+}

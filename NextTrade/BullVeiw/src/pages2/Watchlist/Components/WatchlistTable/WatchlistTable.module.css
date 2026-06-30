@@ -1,0 +1,193 @@
+.tableWrap {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+}
+
+.table thead tr {
+  background: var(--surface-1);
+}
+
+.table th {
+  padding: 12px 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.row {
+  border-top: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.row:hover {
+  background: var(--surface-1);
+}
+
+.table td {
+  padding: 18px 20px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.symName {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.exchange {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.positive {
+  color: #22c55e;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.negative {
+  color: #ef4444;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.tradeBtn {
+  background: #16a34a;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.tradeBtn:hover {
+  background: #15803d;
+}
+
+.instrumentCell {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 120px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.deleteBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.deleteBtn:hover {
+  border-color: #ef4444;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .table th,
+  .table td {
+    padding: 14px 12px;
+  }
+
+  .symName {
+    font-size: 14px;
+  }
+
+  .price,
+  .positive,
+  .negative {
+    font-size: 14px;
+  }
+
+  .tradeBtn {
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .table {
+    min-width: 600px;
+  }
+
+  .table th {
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  .table td {
+    padding: 12px 10px;
+  }
+
+  .symName {
+    font-size: 13px;
+  }
+
+  .exchange {
+    font-size: 10px;
+  }
+
+  .price,
+  .positive,
+  .negative {
+    font-size: 13px;
+  }
+
+  .actions {
+    gap: 6px;
+  }
+
+  .tradeBtn {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .deleteBtn {
+    padding: 5px 6px;
+  }
+}

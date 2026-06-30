@@ -1,0 +1,175 @@
+.dashboardLayout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.mainArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.contentArea {
+  flex: 1;
+  padding: 20px;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.stockGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stockchart {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.chartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.chartHeader h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.chartHeader p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  width: 56px;
+  height: 56px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: var(--brand-green);
+  color: white;
+
+  font-size: 30px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.fab:hover {
+  transform: translateY(-2px);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .contentArea {
+    padding: 16px;
+  }
+
+  .stockGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .dashboardLayout {
+    flex-direction: column;
+  }
+
+  .contentArea {
+    padding: 14px;
+  }
+
+  .sectionTitle {
+    font-size: 22px;
+    margin-bottom: 16px;
+  }
+
+  .stockGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stockchart {
+    padding: 14px;
+  }
+
+  .chartHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .chartHeader h2 {
+    font-size: 18px;
+  }
+
+  .fab {
+    width: 52px;
+    height: 52px;
+    font-size: 26px;
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .contentArea {
+    padding: 12px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+  }
+
+  .stockchart {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .chartHeader h2 {
+    font-size: 17px;
+  }
+
+  .chartHeader p {
+    font-size: 12px;
+  }
+
+  .fab {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+}

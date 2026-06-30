@@ -1,0 +1,254 @@
+.section {
+  padding: 2rem 4rem;
+  background: var(--section-bg);
+  border-color: var(--border-color);
+  font-family: sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0;
+}
+
+.subheading {
+  font-size: 13px;
+  color: var(--muted-text);
+  max-width: 360px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.viewAll {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--brand-green);
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+.viewAll:hover {
+  text-decoration: underline;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 1.1rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--brand-green);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(22, 163, 74, 0.12);
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.badge_hot {
+  background: var(--badge-hot-bg);
+  color: var(--badge-hot-text);
+}
+
+.badge_new {
+  background: var(--badge-new-bg);
+  color: var(--badge-new-text);
+}
+
+.iconWrapper {
+  width: 40px;
+  height: 40px;
+  background: var(--icon-bg);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.icon {
+  color: var(--brand-green);
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0 0 6px;
+}
+
+.cardDesc {
+  font-size: 12px;
+  color: var(--muted-text);
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+
+.exploreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--brand-green);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.exploreArrow {
+  transition: transform 0.2s ease;
+}
+
+.card:hover .exploreArrow {
+  transform: translateX(3px);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--overlay-bg);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  padding: 1.5rem;
+  width: min(420px, 92vw);
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted-text);
+  display: flex;
+  align-items: center;
+}
+
+.closeBtn:hover {
+  color: var(--heading-color);
+}
+
+.modalIconWrapper {
+  width: 48px;
+  height: 48px;
+  background: var(--icon-bg);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.modalTitle {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0 0 6px;
+}
+
+.modalDesc {
+  font-size: 13px;
+  color: var(--muted-text);
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.statBox {
+  background: var(--stat-bg);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.statLabel {
+  font-size: 11px;
+  color: var(--stat-label);
+  margin: 0 0 2px;
+}
+
+.statValue {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin: 0;
+}
+
+.ctaBtn {
+  width: 100%;
+  padding: 10px;
+  background: var(--brand-green);
+  color: var(--btn-text-on-green);
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s ease;
+}
+
+.ctaBtn:hover {
+  background: var(--brand-green-hover);
+}

@@ -1,0 +1,166 @@
+.wrapper {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 300px;
+}
+
+.tabRow {
+  display: flex;
+  background: var(--bg-secondary, #14181f);
+  border-radius: 8px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.tab {
+  flex: 1;
+  padding: 8px 0;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary, #888);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tabActiveBuy {
+  background: var(--brand-green, #1a7a3c);
+  color: #0b1120;
+}
+
+.tabActiveSell {
+  background: #d92d2d;
+  color: #fff;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary, #777);
+}
+
+.select {
+  background: var(--bg-secondary, #14181f);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: inherit;
+  font-size: 0.95rem;
+}
+
+.qtyHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.balance {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--brand-green, #1a7a3c);
+}
+
+.qtyInputRow {
+  display: flex;
+  gap: 8px;
+}
+
+.qtyInput {
+  flex: 1;
+  background: var(--bg-secondary, #14181f);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: inherit;
+  font-size: 1rem;
+}
+
+.stepper {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.stepBtn {
+  flex: 1;
+  width: 32px;
+  border: none;
+  background: var(--bg-secondary, #14181f);
+  color: inherit;
+  cursor: pointer;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.stepBtn:last-child {
+  border-bottom: none;
+}
+
+.summaryCard {
+  background: var(--bg-secondary, #14181f);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #aaa);
+}
+
+.confirmBuy,
+.confirmSell {
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.confirmBuy {
+  background: var(--brand-green, #1a7a3c);
+  color: #fff;
+}
+
+.confirmSell {
+  background: #d92d2d;
+  color: #fff;
+}
+
+.confirmBuy:disabled,
+.confirmSell:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.profit {
+  color: #1a7a3c;
+  font-weight: 600;
+}
+
+.loss {
+  color: #d92d2d;
+  font-weight: 600;
+}

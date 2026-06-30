@@ -1,0 +1,138 @@
+.wrapper {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* --- Signal row --- */
+.signalRow {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.signalIcon {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signalBuy {
+  background: var(--icon-bg, rgba(34, 197, 94, 0.15));
+  color: var(--brand-green);
+}
+
+.signalHold {
+  background: rgba(234, 179, 8, 0.15);
+  color: #eab308;
+}
+
+.signalSell {
+  background: rgba(217, 45, 45, 0.15);
+  color: #d92d2d;
+}
+
+.signalLabel {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.signalDesc {
+  font-size: 0.85rem;
+  color: var(--muted-text, var(--text-secondary));
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --- Link cards grid --- */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.linkCard {
+  position: relative;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  background: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.linkCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.cardArt {
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artIndustry {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.artEarnings {
+  background: linear-gradient(135deg, #1a2a3a, #0d3b2e, #134e3a);
+}
+
+.cardArtIcon {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.cardFooter {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cardTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.cardSubtitle {
+  font-size: 0.72rem;
+  color: var(--muted-text, var(--text-secondary));
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.extIcon {
+  opacity: 0.6;
+}
+
+@media (max-width: 480px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}

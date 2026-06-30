@@ -1,0 +1,108 @@
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.heading {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.iconBox {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-text);
+}
+
+.winRateSection {
+  margin-bottom: 16px;
+}
+
+.winRateTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.winRateLabel {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.winRateValue {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--brand-green);
+}
+
+.progressTrack {
+  width: 100%;
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--brand-green);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.targetText {
+  font-size: 0.72rem;
+  color: var(--muted-text);
+  margin: 8px 0 0;
+}
+
+.holdTimeCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.holdIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.holdLabel {
+  font-size: 0.72rem;
+  color: var(--muted-text);
+  margin: 0 0 2px;
+}
+
+.holdValue {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}

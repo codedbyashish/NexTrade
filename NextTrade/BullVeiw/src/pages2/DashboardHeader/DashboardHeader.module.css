@@ -1,0 +1,128 @@
+.topbar {
+  height: 52px;
+  min-height: 52px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 20px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.searchBar {
+  width: 280px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: text;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.searchBar:hover {
+  border-color: var(--brand-green);
+  box-shadow: 0 0 0 2px rgba(26, 122, 60, 0.1);
+}
+
+.searchIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  color: var(--text-secondary);
+}
+
+.searchText {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  user-select: none;
+  flex: 1;
+}
+
+.searchShortcut {
+  margin-left: auto;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background-color: var(--border-color);
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.topbarRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.iconBtn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.iconBtn:hover {
+  background-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.topbarDivider {
+  width: 1px;
+  height: 22px;
+  background-color: var(--border-color);
+}
+
+.userChip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 10px 5px 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.userChip:hover {
+  background-color: var(--border-color);
+}
+
+.userAvatar {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand-green), #2bb673);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 700;
+}
+
+.userName {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.chevronIcon {
+  width: 13px;
+  height: 13px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}

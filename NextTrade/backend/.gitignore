@@ -1,0 +1,14 @@
+# Local environment variables (CRITICAL)
+.env
+
+# Dependencies
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS Refuse files
+.DS_Store
+Thumbs.db
