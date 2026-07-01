@@ -42,7 +42,7 @@ const Signup = () => {
     try {
       setLoading(true);
 
-      const res = await fetch("https://nextrade-backend-8bec.onrender.com", {
+      const res = await fetch("https://nextrade-backend-8bec.onrender.com/api/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
