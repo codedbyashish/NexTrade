@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { TrendingUp, TrendingDown } from "lucide-react";
-import styles from "./TopMovers.module.css";
+import styles from "./Topmovers.module.css";
 import { getstocksprice } from "../../api/stockapi";
 import RecentTrades from "../Recenttrades/Recenttrades";
 
