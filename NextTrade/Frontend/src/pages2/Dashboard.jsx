@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Dashboard.module.css";
-import useTheme from "../context/ThemeContext";
+import useTheme from "../Context/ThemeContext";
 import { getstocksprice, getCompanyProfile } from "../api/stockapi";
 import StockCard from "../props/StockCard";
 import StockChart from "../stockscahrts/StocksCharts";
-import TopMovers from "../props/Marketcards/TopMovers ";
+import TopMovers from "../props/Marketcards/TopMovers";
 
 const symbols = ["AAPL", "MSFT", "TSLA", "AMZN"];
 

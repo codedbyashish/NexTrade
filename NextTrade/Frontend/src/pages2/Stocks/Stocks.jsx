@@ -4,7 +4,7 @@ import Stockheader from "./Components/Stockheader";
 import StatsRow from "./Components/Statsrow";
 import StockChart from "./Components/StockChart";
 import SymbolSearch from "./Components/TradeSimulator/SymbolSearch";
-import useTheme from "../../context/ThemeContext";
+import useTheme from "../../Context/ThemeContext";
 import TradeSimulator from "./Components/TradeSimulator/TradeSimulator";
 import {
   getstocksprice,
@@ -13,7 +13,7 @@ import {
 } from "../../api/stockapi"
 import styles from "./Stock.module.css";
 import PerformanceInsights from "./Components/PerformanceInsights/PerformanceInsights";
-import Footer from "./components/Footer/Footer";
+import Footer from "./Components/Footer/Footer";
 
 function Stocks() {
   const { darkmode } = useTheme();
