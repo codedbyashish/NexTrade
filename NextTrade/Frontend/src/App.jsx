@@ -12,7 +12,7 @@ import Watchlist from "./pages2/Watchlist/Watchlist";
 import Login from "./pages/Authentication/Login";
 import Signup from "./pages/Authentication/Signup";
 
-import useTheme, { ThemeProvider } from "./context/ThemeContext";
+import useTheme, { ThemeProvider } from "./Context/ThemeContext";
 import Profile from "./pages2/DashboardHeader/Profile/Profile";
 
 const router = createBrowserRouter([
