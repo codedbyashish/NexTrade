@@ -5,7 +5,7 @@ import useTheme from "../Context/ThemeContext";
 import { getstocksprice, getCompanyProfile } from "../api/stockapi";
 import StockCard from "../props/StockCard";
 import StockChart from "../stockscahrts/StocksCharts";
-import TopMovers from "../props/Marketcards/TopMovers";
+import TopMovers from "../props/Marketcards/Topmovers";
 
 const symbols = ["AAPL", "MSFT", "TSLA", "AMZN"];
 

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { RiArrowDownSLine } from "react-icons/ri";
 
 import style from "./Header.module.css";
-import useTheme from "../context/ThemeContext";
-import ToggleTheme from "./toggle";
+import useTheme from "../Context/ThemeContext";
+import ToggleTheme from "./Toggle";
 
 const Header = () => {
   const { darkmode, toggleDarkmode } = useTheme();
