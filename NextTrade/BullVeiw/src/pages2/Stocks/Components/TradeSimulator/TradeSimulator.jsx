@@ -21,6 +21,7 @@ function TradeSimulator({ symbol = "AAPL", currentPrice = 0 }) {
   });
 
   const [result, setResult] = useState(null);
+  const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
   const turnover = isPriceValid ? quantity * price : 0;
@@ -33,6 +34,7 @@ function TradeSimulator({ symbol = "AAPL", currentPrice = 0 }) {
     : 0;
 
   const incQty = () => setQuantity((q) => q + 1);
+
   const decQty = () => setQuantity((q) => Math.max(1, q - 1));
 
   const cleanSymbol = symbol
@@ -42,6 +44,8 @@ function TradeSimulator({ symbol = "AAPL", currentPrice = 0 }) {
 
   const handleConfirm = async () => {
     setLoading(true);
+    setResult(null);
+    setMessage("");
 
     try {
       const token = localStorage.getItem("token");
@@ -76,19 +80,34 @@ function TradeSimulator({ symbol = "AAPL", currentPrice = 0 }) {
       }
 
       if (mode === "buy") {
-        setPosition((p) => ({
-          quantity: p.quantity + quantity,
+        setPosition((prev) => ({
+          quantity: prev.quantity + quantity,
         }));
+
+        setMessage(
+          ` Successfully bought ${quantity} ${cleanSymbol} share${
+            quantity > 1 ? "s" : ""
+          }.`
+        );
       } else {
-        setPosition((p) => ({
-          quantity: Math.max(0, p.quantity - quantity),
+        setPosition((prev) => ({
+          quantity: Math.max(0, prev.quantity - quantity),
         }));
 
         setResult(data);
+
+        setMessage(
+          `✅ Successfully sold ${quantity} ${cleanSymbol} share${
+            quantity > 1 ? "s" : ""
+          }.`
+        );
       }
 
-      // Refresh Portfolio page immediately
       window.dispatchEvent(new Event("portfolio-update"));
+
+      setTimeout(() => {
+        setMessage("");
+      }, 3000);
     } catch (err) {
       console.error(err);
       alert("Server error");
@@ -190,7 +209,14 @@ function TradeSimulator({ symbol = "AAPL", currentPrice = 0 }) {
         </div>
       </div>
 
-      {/* BUTTON */}
+      {/* SUCCESS MESSAGE */}
+      {message && (
+        <div className={styles.successMessage}>
+          {message}
+        </div>
+      )}
+
+      {/* BUY / SELL BUTTON */}
       <button
         className={
           mode === "buy"

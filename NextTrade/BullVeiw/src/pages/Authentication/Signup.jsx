@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [agreed, setAgreed] = useState(false);
 
   const [loading, setLoading] = useState(false);
@@ -88,9 +89,7 @@ const Signup = () => {
             <span className={styles.brandTag}>NexTrade</span>
           </div>
 
-          <h2 className={styles.tagline}>
-            Join the future of retail trading.
-          </h2>
+          <h2 className={styles.tagline}>Join the future of retail trading.</h2>
 
           <div className={styles.speedCard}>
             <div>
@@ -108,13 +107,15 @@ const Signup = () => {
 
       <div className={styles.rightPanel}>
         <div className={styles.formWrapper}>
-          <h1 className={styles.formTitle}>
-            Create your terminal account
-          </h1>
+          <h1 className={styles.formTitle}>Create your terminal account</h1>
 
           <form className={styles.form} onSubmit={handleSubmit}>
             {/* NAME */}
-            <input name="name" placeholder="Full Name" className={styles.input} />
+            <input
+              name="name"
+              placeholder="Full Name"
+              className={styles.input}
+            />
 
             {/* EMAIL */}
             <input name="email" placeholder="Email" className={styles.input} />
@@ -137,22 +138,33 @@ const Signup = () => {
 
               <button
                 type="button"
+                className={styles.eyeButton}
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? <EyeOff /> : <Eye />}
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
+            {/* CONFIRM */}
+
+            <div className={styles.passwordWrapper}>
+              <input
+                name="confirmPassword"
+                type={showConfirmPassword ? "text" : "password"}
+                placeholder="Confirm Password"
+                className={styles.input}
+              />
+
+              <button
+                type="button"
+                className={styles.eyeButton}
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              >
+                {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
             </div>
 
-            {/* CONFIRM */}
-            <input
-              name="confirmPassword"
-              type="password"
-              placeholder="Confirm Password"
-              className={styles.input}
-            />
-
             {/* TERMS */}
-            <label>
+            <label className={styles.termsRow}>
               <input
                 type="checkbox"
                 checked={agreed}
@@ -165,7 +177,11 @@ const Signup = () => {
             {message && <p className={styles.message1}>{message}</p>}
 
             {/* BUTTON */}
-            <button type="submit" disabled={loading} className={styles.submitBtn}>
+            <button
+              type="submit"
+              disabled={loading}
+              className={styles.submitBtn}
+            >
               {loading ? "Creating..." : "Create Account"}
               <ArrowRight size={18} />
             </button>

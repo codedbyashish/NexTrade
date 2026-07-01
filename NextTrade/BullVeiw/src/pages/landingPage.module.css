@@ -1,18 +1,54 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes floatTilt {
+  0%, 100% {
+    transform: perspective(1000px) rotateY(var(--ry)) rotateX(var(--rx)) translateY(0);
+  }
+  50% {
+    transform: perspective(1000px) rotateY(var(--ry)) rotateX(var(--rx)) translateY(-8px);
+  }
+}
+
 .hero {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 30px 80px;
+  justify-content: center;
+  padding: 20px 60px;
   background-color: var(--hero-bg);
-  height: 76dvh;
-  gap: 40px;
+  height: 80dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 280px;
+  max-width: 1400px;
+  width: 100%;
 }
 
 .leftContent {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
   max-width: 420px;
+  animation: fadeInUp 0.6s ease-out both;
 }
 
 .inv {
@@ -27,6 +63,7 @@
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.4px;
+  animation: fadeInUp 0.6s ease-out 0.05s both;
 }
 
 .inv .dot {
@@ -43,6 +80,7 @@
   line-height: 1.1;
   color: var(--text-primary);
   margin: 0;
+  animation: fadeInUp 0.6s ease-out 0.15s both;
 }
 
 .mainContent h2 span {
@@ -54,13 +92,15 @@
   color: var(--text-secondary);
   line-height: 1.6;
   margin: 0;
+  animation: fadeInUp 0.6s ease-out 0.25s both;
 }
 
 .btnRow {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 8px;
+  gap: 12px;
+  margin-top: 4px;
+  animation: fadeInUp 0.6s ease-out 0.35s both;
 }
 
 .btnPrimary {
@@ -72,11 +112,16 @@
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
 .btnPrimary:hover {
   background-color: var(--brand-green-hover);
+  transform: translateY(-1px);
+}
+
+.btnPrimary:active {
+  transform: translateY(0);
 }
 
 .btnSecondary {
@@ -91,11 +136,16 @@
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
 .btnSecondary:hover {
   border-color: var(--border-secondary-hover);
+  transform: translateY(-1px);
+}
+
+.btnSecondary:active {
+  transform: translateY(0);
 }
 
 .ticker {
@@ -127,23 +177,25 @@
 
 .banner {
   width: 100%;
-  height: 52px;
+  height: 44px;
   background-color: var(--mock-banner);
   border-radius: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .cardRow {
   display: flex;
-  gap: 16px;
+  gap: 12px;
 }
 
 .cardLeft,
 .cardRight {
   flex: 1;
-  height: 220px;
+  height: 190px;
   background-color: var(--mock-tile);
   border-radius: 16px;
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cardImageArea {
@@ -151,38 +203,179 @@
   margin-top: 50%;
   background-color: var(--mock-tile-accent);
   border-radius: 0 0 16px 16px;
+  transition: height 0.3s ease, margin-top 0.3s ease;
 }
 
 .cardWide {
   width: 100%;
-  height: 220px;
+  height: 190px;
   background-color: var(--mock-tile);
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .chartIcon {
   font-size: 56px;
   opacity: 0.4;
   filter: grayscale(1);
+  display: inline-block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
 }
 
+
 .page {
-  padding: 20px 24px;
+  --rx: 3deg;
+  --ry: -6deg;
+  padding: 16px 20px;
   background-color: var(--mock-card-bg);
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   width: 450px;
   height: 480px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
-  transform: perspective(1000px) rotateY(-6deg) rotateX(3deg);
-  transition: transform 0.3s ease, background-color 0.2s ease;
+  will-change: transform;
+  cursor: pointer;
+  opacity: 0;
+  transform-style: preserve-3d;
+  animation:
+    fadeIn 0.6s ease-out 0.2s both,
+    floatTilt 4s ease-in-out 0.8s infinite;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .page:hover {
-  transform: perspective(1000px) rotateY(-2deg) rotateX(1deg);
+  box-shadow: 0 32px 70px rgba(0, 0, 0, 0.45);
+  animation-play-state: paused;
+  transform: perspective(1000px) rotateY(var(--ry)) rotateX(var(--rx)) translateY(-4px) scale(1.015);
+}
+
+.page:hover .banner {
+  transform: translateZ(20px) scaleX(1.015);
+  background-color: var(--mock-tile-accent);
+}
+
+.page:hover .cardLeft {
+  transform: translateZ(30px) translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.page:hover .cardRight {
+  transform: translateZ(30px) translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  transition-delay: 0.06s;
+}
+
+.page:hover .cardImageArea {
+  height: 70%;
+  margin-top: 30%;
+}
+
+.page:hover .cardWide {
+  transform: translateZ(30px) translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  transition-delay: 0.12s;
+}
+
+.page:hover .chartIcon {
+  transform: translateZ(40px) translateY(-4px) scale(1.1);
+  opacity: 0.6;
+}
+
+
+
+@media (max-width: 1024px) {
+  .heroInner {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero {
+    height: auto;
+    padding: 40px 32px;
+  }
+
+  .leftContent {
+    max-width: 560px;
+    align-items: center;
+  }
+
+  .btnRow {
+    justify-content: center;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 450px;
+    animation: fadeIn 0.6s ease-out 0.2s both;
+  }
+
+  .page:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 32px 20px;
+  }
+
+  .heroInner {
+    gap: 28px;
+  }
+
+  .mainContent h2 {
+    font-size: 32px;
+  }
+
+  .smallpara p {
+    font-size: 14px;
+  }
+
+  .btnRow {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .page {
+    height: auto;
+    padding: 14px 16px;
+  }
+
+  .cardLeft,
+  .cardRight,
+  .cardWide {
+    height: 140px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .leftContent,
+  .inv,
+  .mainContent h2,
+  .smallpara p,
+  .btnRow,
+  .page,
+  .page:hover .banner,
+  .page:hover .cardLeft,
+  .page:hover .cardRight,
+  .page:hover .cardImageArea,
+  .page:hover .cardWide,
+  .page:hover .chartIcon {
+    animation: none;
+    transform: none;
+    opacity: 1;
+  }
 }

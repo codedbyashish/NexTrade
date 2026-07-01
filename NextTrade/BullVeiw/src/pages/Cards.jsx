@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { BarChart2, LayoutGrid, Rocket, Building2, ArrowRight, X } from "lucide-react";
 import styles from "./InvestmentOptions.module.css";
 
@@ -11,7 +12,7 @@ const investmentOptions = [
     badge: { text: "Hot", type: "hot" },
     stats: [
       { label: "Listed companies", value: "5,000+" },
-      { label: "Min investment", value: "₹1" },
+      { label: "Min investment", value: "$1" },
       { label: "Avg returns", value: "~12% p.a." },
       { label: "Settlement", value: "T+1 day" },
     ],
@@ -26,7 +27,7 @@ const investmentOptions = [
     stats: [
       { label: "Available ETFs", value: "200+" },
       { label: "Expense ratio", value: "0.05–0.5%" },
-      { label: "Min investment", value: "₹50" },
+      { label: "Min investment", value: "$50" },
       { label: "Type", value: "Passive fund" },
     ],
     longDesc: "Exchange traded funds that mirror indices like Nifty 50 and Sensex — low cost with broad diversification.",
@@ -40,7 +41,7 @@ const investmentOptions = [
     stats: [
       { label: "Active IPOs", value: "3" },
       { label: "Application", value: "UPI / ASBA" },
-      { label: "Min lot size", value: "₹14,000" },
+      { label: "Min lot size", value: "$14,000" },
       { label: "Allotment", value: "T+6 days" },
     ],
     longDesc: "Apply for IPOs directly through your account using UPI block mechanism. Track GMP and subscription status live.",
@@ -53,7 +54,7 @@ const investmentOptions = [
     badge: null,
     stats: [
       { label: "Yield range", value: "7%–12%" },
-      { label: "Min investment", value: "₹1,000" },
+      { label: "Min investment", value: "$1,000" },
       { label: "Tenure", value: "1–30 years" },
       { label: "Safety", value: "High" },
     ],
@@ -63,10 +64,13 @@ const investmentOptions = [
 
 export default function InvestmentOptions() {
   const [selectedItem, setSelectedItem] = useState(null);
+  const navigate = useNavigate();
+
+  const goToLogin = () => navigate("/login");
 
   return (
     <section className={styles.section}>
-      
+
       <div className={styles.header}>
         <div className={styles.headerLeft}>
           <h2 className={styles.heading}>Investment options tailored for you.</h2>
@@ -74,12 +78,11 @@ export default function InvestmentOptions() {
             Diversify your portfolio across different asset classes with zero commission on most products.
           </p>
         </div>
-        <button className={styles.viewAll}>
+        <button className={styles.viewAll} onClick={goToLogin}>
           View all products <ArrowRight size={14} />
         </button>
       </div>
 
-    
       <div className={styles.grid}>
         {investmentOptions.map((item) => {
           const Icon = item.icon;
@@ -99,7 +102,13 @@ export default function InvestmentOptions() {
               </div>
               <h3 className={styles.cardTitle}>{item.title}</h3>
               <p className={styles.cardDesc}>{item.description}</p>
-              <button className={styles.exploreBtn}>
+              <button
+                className={styles.exploreBtn}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToLogin();
+                }}
+              >
                 Explore <ArrowRight size={14} className={styles.exploreArrow} />
               </button>
             </div>
@@ -107,7 +116,6 @@ export default function InvestmentOptions() {
         })}
       </div>
 
-      
       {selectedItem && (
         <div className={styles.overlay} onClick={() => setSelectedItem(null)}>
           <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
@@ -127,7 +135,7 @@ export default function InvestmentOptions() {
                 </div>
               ))}
             </div>
-            <button className={styles.ctaBtn}>
+            <button className={styles.ctaBtn} onClick={goToLogin}>
               Start investing <ArrowRight size={14} />
             </button>
           </div>

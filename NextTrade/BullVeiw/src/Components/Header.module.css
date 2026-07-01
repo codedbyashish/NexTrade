@@ -1,88 +1,337 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 *{
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-.navbar {
+.navbar{
+  width: 100%;
+  height: 80px;
+  padding: 0 40px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 32px;
-  height: 80px;
-  background-color: var(--bg-primary);
+
+  background: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  backdrop-filter: blur(14px);
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
 }
 
-.navbar .brand .link {
+/* =========================================
+   BRAND
+========================================= */
+
+.brand{
+  display: flex;
+  align-items: center;
+}
+
+.brand .link{
+  text-decoration: none;
+
   font-size: 2rem;
   font-weight: 700;
+  letter-spacing: -1px;
+
   color: var(--brand-green);
-  text-decoration: none;
-  letter-spacing: -0.3px;
+
+  transition: opacity 0.2s ease;
 }
 
-.navbar nav {
+.brand .link:hover{
+  opacity: 0.85;
+}
+
+/* =========================================
+   NAV
+========================================= */
+
+.navbar nav{
   display: flex;
   align-items: center;
   flex: 1;
-  margin-left: 32px;
+
+  margin-left: 48px;
 }
 
-nav ul {
+nav ul{
   display: flex;
   align-items: center;
+  gap: 10px;
+
   list-style: none;
-  gap: 1rem;
+}
+
+/* =========================================
+   NAV ITEM
+========================================= */
+
+.navItem{
+  position: relative;
+}
+
+.navTrigger{
+  height: 44px;
+  padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  color: var(--text-secondary);
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navTrigger:hover{
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.navTrigger span{
+  font-size: 14px;
   font-weight: 500;
 }
 
-.link {
-  text-decoration: none;
-  color: var(--text-secondary);
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.15s ease, color 0.15s ease;
+.arrow{
+  font-size: 20px;
+  transition: transform 0.25s ease;
 }
 
-.navbar .button {
+.navItem:hover .arrow{
+  transform: rotate(180deg);
+}
+
+
+
+
+.dropdown{
+  position: absolute;
+
+  top: 58px;
+  left: 0;
+
+  width: 320px;
+
+  padding: 14px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  background: var(--bg-primary);
+
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+
+  box-shadow:
+    0 12px 40px rgba(0,0,0,0.12),
+    0 2px 10px rgba(0,0,0,0.08);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(12px) scale(0.98);
+
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    visibility 0.22s ease;
+
+  z-index: 999;
+}
+
+.navItem:hover .dropdown{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+
+
+.dropdownCard{
+  padding: 16px;
+
+  border-radius: 14px;
+
+  background: var(--bg-secondary);
+  border: 1px solid transparent;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.dropdownCard:hover{
+  transform: translateY(-3px);
+
+  border-color: var(--brand-green);
+
+  background: rgba(34, 197, 94, 0.06);
+}
+
+.dropdownCard h4{
+  font-size: 15px;
+  font-weight: 600;
+
+  color: var(--text-primary);
+
+  margin-bottom: 6px;
+}
+
+.dropdownCard p{
+  font-size: 13px;
+  line-height: 1.55;
+
+  color: var(--text-secondary);
+}
+
+
+
+.button{
   display: flex;
   align-items: center;
   gap: 12px;
+
   margin-left: auto;
 }
 
-.navbar .button button {
-  cursor: pointer;
-  border-radius: 6px;
+
+
+.link{
+  text-decoration: none;
+}
+
+
+
+.button button{
+  height: 42px;
+  padding: 0 18px;
+
+  border-radius: 10px;
+
   font-size: 14px;
   font-weight: 600;
-  transition: all 0.15s ease;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
-.navbar .button button:first-child {
+/* LOGIN */
+
+.button a:first-of-type button{
   background: transparent;
-  border: none;
+
+  border: 1px solid var(--border-color);
+
   color: var(--text-primary);
-  padding: 8px 16px;
 }
 
-.navbar .button button:first-child:hover {
-  background-color: var(--bg-secondary);
+.button a:first-of-type button:hover{
+  background: var(--bg-secondary);
+
+  border-color: var(--border-secondary-hover);
+
+  transform: translateY(-1px);
 }
 
-.navbar .button button:last-child {
-  background-color: var(--brand-green);
+/* SIGNUP */
+
+.button a:last-of-type button{
+  background: var(--brand-green);
+
   border: none;
+
   color: var(--btn-text-on-green);
-  padding: 10px 20px;
-  border-radius: 8px;
+
+  box-shadow: 0 6px 18px rgba(34, 197, 94, 0.25);
 }
 
-.navbar .button button:last-child:hover {
-  background-color: var(--brand-green-hover);
+.button a:last-of-type button:hover{
+  background: var(--brand-green-hover);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 24px rgba(34, 197, 94, 0.35);
+}
+
+.button button:active{
+  transform: translateY(0);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 950px){
+
+  .navbar{
+    padding: 0 20px;
+  }
+
+  .navbar nav{
+    margin-left: 20px;
+  }
+
+  nav ul{
+    gap: 2px;
+  }
+
+  .dropdown{
+    width: 280px;
+  }
+}
+
+@media (max-width: 780px){
+
+  nav ul{
+    display: none;
+  }
+
+  .navbar{
+    height: 72px;
+  }
+
+  .brand .link{
+    font-size: 1.7rem;
+  }
+
+  .button{
+    gap: 8px;
+  }
+
+  .button button{
+    height: 38px;
+    padding: 0 14px;
+    font-size: 13px;
+  }
 }

@@ -75,7 +75,6 @@ const Login = () => {
 
       localStorage.setItem("user", JSON.stringify(safeUser));
 
-
       setMessage("Login successful ✔");
 
       setTimeout(() => {
@@ -195,6 +194,12 @@ const Login = () => {
               {loading ? "Logging in..." : "Login"}
               <ArrowRight size={16} />
             </button>
+
+            
+            <p className={styles.signupText}>
+              Don't have an account?
+              <a href="/signup">Sign up</a>
+            </p>
           </form>
         </div>
       </div>

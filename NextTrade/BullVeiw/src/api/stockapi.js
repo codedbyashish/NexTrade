@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_KEY =
   import.meta.env.VITE_FINNHUB_API_KEY ||
-  "d8tutd1r01qinhuemfr0d8tutd1r01qinhuemfrg";
+  "d920lkhr01qrfbe7ohh0d920lkhr01qrfbe7ohhg";
 
 const finnhubClient = axios.create({
   baseURL: "https://finnhub.io/api/v1",

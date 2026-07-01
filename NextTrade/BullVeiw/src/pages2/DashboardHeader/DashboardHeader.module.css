@@ -1,77 +1,126 @@
 .topbar {
-  height: 52px;
-  min-height: 52px;
+  height: 56px;
+  min-height: 56px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 0 20px;
+  padding: 0 24px;
   background-color: var(--bg-secondary);
   border-bottom: 1px solid var(--border-color);
 }
 
-.searchBar {
-  width: 280px;
+
+.topbarLeft {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 7px 12px;
+  gap: 12px;
+  min-width: 0;
+}
+
+.logoMark {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.logoDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, var(--brand-green), #2bb673);
+  flex-shrink: 0;
+}
+
+.companyName {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--brand-green);
+  letter-spacing: -0.1px;
+  white-space: nowrap;
+}
+
+.titleDivider {
+  width: 1px;
+  height: 16px;
+  background-color: var(--border-color);
+  flex-shrink: 0;
+}
+
+.brandTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.1px;
+  white-space: nowrap;
+}
+
+
+.tickerItem {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 10px;
+  border-radius: 6px;
   background-color: var(--bg-primary);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  cursor: text;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
 }
 
-.searchBar:hover {
-  border-color: var(--brand-green);
-  box-shadow: 0 0 0 2px rgba(26, 122, 60, 0.1);
-}
-
-.searchIcon {
-  width: 14px;
-  height: 14px;
+.tickerDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #2bb673;
   flex-shrink: 0;
+}
+
+.tickerLabel {
+  font-size: 11px;
+  font-weight: 500;
   color: var(--text-secondary);
 }
 
-.searchText {
-  font-size: 12.5px;
-  color: var(--text-secondary);
-  user-select: none;
-  flex: 1;
-}
-
-.searchShortcut {
-  margin-left: auto;
-  padding: 3px 7px;
-  border-radius: 5px;
-  background-color: var(--border-color);
-  color: var(--text-secondary);
-  font-size: 10px;
+.tickerValue {
+  font-size: 11.5px;
   font-weight: 600;
-  letter-spacing: 0.3px;
+  color: var(--text-primary);
+}
+
+.tickerChange {
+  font-size: 11px;
+  font-weight: 500;
+  color: #2bb673;
 }
 
 .topbarRight {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.menuWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .iconBtn {
-  width: 34px;
-  height: 34px;
+  position: relative;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   background: transparent;
   color: var(--text-secondary);
   cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
 }
 
 .iconBtn:hover {
@@ -79,18 +128,185 @@
   color: var(--text-primary);
 }
 
+.iconBtn:active {
+  transform: scale(0.94);
+}
+
+.badge {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #2bb673;
+  box-shadow: 0 0 0 2px var(--bg-secondary);
+}
+
 .topbarDivider {
   width: 1px;
-  height: 22px;
+  height: 24px;
   background-color: var(--border-color);
+  margin: 0 4px;
 }
+
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06);
+  z-index: 50;
+  animation: dropdownIn 0.14s ease;
+}
+
+@keyframes dropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.notifDropdown {
+  width: 340px;
+  max-width: 90vw;
+  overflow: hidden;
+}
+
+.dropdownHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 10px;
+}
+
+.dropdownTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.markReadBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  background: transparent;
+  color: var(--brand-green);
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.markReadBtn:hover {
+  background-color: rgba(26, 122, 60, 0.1);
+}
+
+.notifList {
+  max-height: 320px;
+  overflow-y: auto;
+  border-top: 1px solid var(--border-color);
+}
+
+.notifItem {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.notifItem:last-child {
+  border-bottom: none;
+}
+
+.notifItem:hover {
+  background-color: var(--bg-secondary);
+}
+
+.notifItemUnread {
+  background-color: rgba(26, 122, 60, 0.04);
+}
+
+.notifDotIndicator {
+  width: 7px;
+  height: 7px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background-color: var(--brand-green);
+  flex-shrink: 0;
+}
+
+.notifContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.notifItemTitle {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.notifItemDesc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.notifItemTime {
+  font-size: 10.5px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.emptyState {
+  padding: 32px 16px;
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+.viewAllBtn {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  color: var(--brand-green);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.viewAllBtn:hover {
+  background-color: var(--bg-secondary);
+}
+
+
 
 .userChip {
   display: flex;
   align-items: center;
   gap: 9px;
   padding: 5px 10px 5px 5px;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.15s ease;
 }
@@ -100,8 +316,8 @@
 }
 
 .userAvatar {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,12 +325,12 @@
   border-radius: 50%;
   background: linear-gradient(135deg, var(--brand-green), #2bb673);
   color: #ffffff;
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 700;
 }
 
 .userName {
-  font-size: 12.5px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--text-primary);
   white-space: nowrap;
@@ -125,4 +341,160 @@
   height: 13px;
   color: var(--text-secondary);
   flex-shrink: 0;
+}
+
+
+@media (max-width: 1024px) {
+  .topbar {
+    padding: 0 18px;
+  }
+
+  .tickerItem {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    height: 52px;
+    min-height: 52px;
+    padding: 0 14px;
+    gap: 10px;
+  }
+
+  .topbarLeft {
+    gap: 8px;
+  }
+
+  .companyName {
+    font-size: 13px;
+  }
+
+  .titleDivider {
+    height: 14px;
+  }
+
+  .brandTitle {
+    font-size: 13px;
+  }
+
+  .topbarRight {
+    gap: 6px;
+  }
+
+  .iconBtn {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+  }
+
+  .topbarDivider {
+    height: 20px;
+    margin: 0 2px;
+  }
+
+  .userName {
+    display: none;
+  }
+
+  .chevronIcon {
+    display: none;
+  }
+
+  .userChip {
+    padding: 4px;
+  }
+
+  .notifDropdown {
+    width: 300px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .topbar {
+    padding: 0 12px;
+    gap: 8px;
+  }
+
+  .titleDivider,
+  .brandTitle {
+    display: none;
+  }
+
+  .companyName {
+    font-size: 13px;
+  }
+
+  .logoDot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .topbarRight {
+    gap: 4px;
+  }
+
+  .iconBtn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .topbarDivider {
+    display: none;
+  }
+
+  .userAvatar {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+
+  .userChip {
+    padding: 2px;
+  }
+
+  .dropdown {
+    right: -8px;
+  }
+
+  .notifDropdown {
+    width: 92vw;
+    max-width: 340px;
+  }
+
+  .dropdownHeader {
+    padding: 12px 14px 8px;
+  }
+
+  .notifItem {
+    padding: 10px 14px;
+  }
+
+  .markReadBtn {
+    font-size: 10.5px;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .topbar {
+    padding: 0 10px;
+  }
+
+  .companyName {
+    font-size: 12.5px;
+  }
+
+  .iconBtn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .userAvatar {
+    width: 26px;
+    height: 26px;
+    font-size: 10.5px;
+  }
 }
