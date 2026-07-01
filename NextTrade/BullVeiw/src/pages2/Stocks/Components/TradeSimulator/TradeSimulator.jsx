@@ -57,8 +57,8 @@ function TradeSimulator({ symbol = "AAPL", currentPrice = 0 }) {
 
       const url =
         mode === "buy"
-          ? "http://localhost:5000/api/trade/buy"
-          : "http://localhost:5000/api/trade/sell";
+          ? "https://nextrade-backend-8bec.onrender.com/api/trade/buy"
+          : "https://nextrade-backend-8bec.onrender.com/api/trade/sell";
 
       const res = await fetch(url, {
         method: "POST",
