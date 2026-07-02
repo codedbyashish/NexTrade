@@ -9,7 +9,7 @@ Built with the MERN stack, featuring live market data, portfolio tracking, and a
 <img width="1549" height="784" alt="image" src="https://github.com/user-attachments/assets/12ee8c3c-c448-4d8b-bce0-49fb4338c669" />
 <img width="1556" height="784" alt="image" src="https://github.com/user-attachments/assets/5def680d-caad-4f0b-9083-b984371b6f79" />
 <img width="1543" height="784" alt="image" src="https://github.com/user-attachments/assets/fb634e30-a4d0-4f63-90b6-73375637907f" />
-![Uploading image.png…]()
+<img width="1549" height="784" alt="image" src="https://github.com/user-attachments/assets/31a821b8-e207-430e-a59e-9dd4ebea682e" />
 
 
 
